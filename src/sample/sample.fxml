@@ -9,17 +9,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="412.0" prefWidth="368.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox prefHeight="432.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <AnchorPane prefHeight="33.0" prefWidth="354.0" VBox.vgrow="NEVER">
          <children>
-            <TextField fx:id="textFieldName" layoutX="43.0" layoutY="2.0" prefHeight="25.0" prefWidth="268.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0" />
-            <Button fx:id="buttonAdd" layoutX="288.0" layoutY="2.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="55.0" prefWidth="38.0" text="Add" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Label layoutX="130.0" layoutY="34.0" text="Price" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="34.0" />
-            <TextField fx:id="textFieldPrice" alignment="CENTER_RIGHT" layoutX="162.0" layoutY="25.0" onKeyReleased="#checkOnNumber" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0" />
-            <Label layoutX="7.0" layoutY="6.0" text="Name" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Label layoutX="-2.0" layoutY="34.0" text="Count" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.0" />
-            <TextField fx:id="textFieldCount" alignment="CENTER_RIGHT" layoutX="50.0" layoutY="29.0" onKeyReleased="#checkOnNumber" prefHeight="25.0" prefWidth="56.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="30.0" />
+            <TextField fx:id="textFieldName" layoutX="43.0" layoutY="2.0" prefHeight="15.0" prefWidth="273.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="buttonAdd" layoutX="417.0" layoutY="3.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="71.0" prefWidth="49.0" text="Add" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="130.0" layoutY="34.0" prefHeight="21.0" prefWidth="37.0" text="Price" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="44.0" />
+            <TextField fx:id="textFieldPrice" alignment="CENTER_RIGHT" layoutX="162.0" layoutY="25.0" onKeyReleased="#checkOnNumber" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="40.0" />
+            <Label layoutX="7.0" layoutY="6.0" text="Name" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="5.0" />
+            <Label layoutX="-2.0" layoutY="34.0" text="Count" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="44.0" />
+            <TextField fx:id="textFieldCount" alignment="CENTER_RIGHT" layoutX="50.0" layoutY="29.0" onKeyReleased="#checkOnNumber" prefHeight="25.0" prefWidth="56.0" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="40.0" />
          </children>
          <VBox.margin>
             <Insets left="10.0" right="5.0" top="5.0" />
@@ -29,10 +29,10 @@
          <children>
             <TableView fx:id="table" layoutX="14.0" layoutY="33.0" prefHeight="263.0" prefWidth="348.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn fx:id="tableColumnName" prefWidth="75.0" text="Name" />
-                  <TableColumn fx:id="tableColumnPrice" prefWidth="75.0" text="Price" />
-                <TableColumn fx:id="tableColumnCount" prefWidth="75.0" text="Count" />
-                  <TableColumn fx:id="tableColumnSum" prefWidth="75.0" text="Sum" />
+                <TableColumn fx:id="tableColumnName" prefWidth="-1.0" text="Name" />
+                  <TableColumn fx:id="tableColumnPrice" prefWidth="50.0" text="Price" />
+                <TableColumn fx:id="tableColumnCount" prefWidth="30.0" text="Count" />
+                  <TableColumn fx:id="tableColumnSum" prefWidth="40.0" text="Sum" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

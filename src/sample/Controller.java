@@ -65,11 +65,11 @@ public class Controller {
         TextField textField = (TextField) keyEvent.getSource();
         String s = textField.getText();
         try {
-            Integer.parseInt(s);
+            Double.parseDouble(s);
             checkNuber = true;
         } catch (Exception e) {
             if ((keyEvent.getCode() != KeyCode.ENTER && checkNuber)) {
-                textField.setText(s.replaceAll("[^0-9.]", ""));
+                textField.setText(s.replaceAll("^[0-9]*[.,]?[0-9]+$", ""));
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("PARSE");
                 alert.setHeaderText(null);
