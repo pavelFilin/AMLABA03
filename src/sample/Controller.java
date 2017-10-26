@@ -51,7 +51,6 @@ public class Controller {
         tableColumnPrice.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
         tableColumnCount.setCellValueFactory(new PropertyValueFactory<Product, Integer>("count"));
         tableColumnSum.setCellValueFactory(new PropertyValueFactory<Product, Double>("sum"));
-        productList.add(new Product("ddd", 22, 2));
         try {
             table.setItems(productList);
         } catch (Exception e) {
@@ -64,12 +63,15 @@ public class Controller {
     private void checkOnNumber(KeyEvent keyEvent) {
         TextField textField = (TextField) keyEvent.getSource();
         String s = textField.getText();
+        if(s.isEmpty()){
+            return;
+        }
         try {
             Double.parseDouble(s);
             checkNuber = true;
         } catch (Exception e) {
             if ((keyEvent.getCode() != KeyCode.ENTER && checkNuber)) {
-                textField.setText(s.replaceAll("^[0-9]*[.,]?[0-9]+$", ""));
+                textField.setText(s.replaceAll("^[0-9]*[.]?[0-9]+$", ""));
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("PARSE");
                 alert.setHeaderText(null);
@@ -83,7 +85,7 @@ public class Controller {
     @FXML
     private void addProduct(ActionEvent actionEvent) {
         if (!textFieldName.getText().isEmpty() && !textFieldCount.getText().isEmpty() || !textFieldPrice.getText().isEmpty()) {
-            Product product = new Product(textFieldName.getText(), Integer.parseInt(textFieldCount.getText()), Double.parseDouble(textFieldPrice.getText()));
+            Product product = new Product(textFieldName.getText(), (int)Double.parseDouble(textFieldCount.getText()), Double.parseDouble(textFieldPrice.getText()));
             productList.add(product);
             setToTable(product);
             printSum(productList);
